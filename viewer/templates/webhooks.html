@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webhooks</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Webhooks</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Version</th>
+            <th>Shared Secret</th>
+            <th>Sent At</th>
+            <th>Organization ID</th>
+            <th>Organization Name</th>
+            <th>Organization URL</th>
+            <th>Network ID</th>
+            <th>Network Name</th>
+            <th>Network URL</th>
+            <th>Network Tags</th>
+            <th>Device Serial</th>
+            <th>Device MAC</th>
+            <th>Device Name</th>
+            <th>Device URL</th>
+            <th>Device Tags</th>
+            <th>Device Model</th>
+            <th>Alert ID</th>
+            <th>Alert Type</th>
+            <th>Alert Type ID</th>
+            <th>Alert Level</th>
+            <th>Occurred At</th>
+            <th>Alert Data</th>
+        </tr>
+        {% for webhook in webhooks %}
+        <tr>
+            <td>{{ webhook.id }}</td>
+            <td>{{ webhook.version }}</td>
+            <td>{{ webhook.sharedSecret }}</td>
+            <td>{{ webhook.sentAt }}</td>
+            <td>{{ webhook.organizationId }}</td>
+            <td>{{ webhook.organizationName }}</td>
+            <td>{{ webhook.organizationUrl }}</td>
+            <td>{{ webhook.networkId }}</td>
+            <td>{{ webhook.networkName }}</td>
+            <td>{{ webhook.networkUrl }}</td>
+            <td>{{ webhook.networkTags }}</td>
+            <td>{{ webhook.deviceSerial }}</td>
+            <td>{{ webhook.deviceMac }}</td>
+            <td>{{ webhook.deviceName }}</td>
+            <td>{{ webhook.deviceUrl }}</td>
+            <td>{{ webhook.deviceTags }}</td>
+            <td>{{ webhook.deviceModel }}</td>
+            <td>{{ webhook.alertId }}</td>
+            <td>{{ webhook.alertType }}</td>
+            <td>{{ webhook.alertTypeId }}</td>
+            <td>{{ webhook.alertLevel }}</td>
+            <td>{{ webhook.occurredAt }}</td>
+            <td>{{ webhook.alertData }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
